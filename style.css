@@ -1,0 +1,317 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap");
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+.page {
+  height: 100%;
+  font-family: 'Ubuntu', sans-serif;
+  font-style: normal;
+}
+
+.page__body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100%;
+  font-size: 16px;
+  background-color: #38404B;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.btn-reset {
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 40px;
+  max-width: 1180px;
+}
+
+::-webkit-input-placeholder {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  color: rgba(148, 173, 207, 0.5);
+}
+
+:-ms-input-placeholder {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  color: rgba(148, 173, 207, 0.5);
+}
+
+::-ms-input-placeholder {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  color: rgba(148, 173, 207, 0.5);
+}
+
+::placeholder {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  color: rgba(148, 173, 207, 0.5);
+}
+
+.main__title {
+  display: block;
+  margin-top: 70px;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 40px;
+  text-align: center;
+  color: #94ADCF;
+}
+
+.centered {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.input__wrap {
+  position: relative;
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-top: 30px;
+  margin-bottom: 100px;
+  text-align: center;
+}
+
+.input-btn {
+  position: absolute;
+  padding: 7px;
+  top: 35%;
+  right: 4%;
+  width: 15px;
+  height: 15px;
+  border-top: 4px solid #94ADCF;
+  border-left: 4px solid #94ADCF;
+  -webkit-transform: rotate(-225deg);
+          transform: rotate(-225deg);
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+
+.input-btn:hover {
+  -webkit-filter: brightness(90%);
+          filter: brightness(90%);
+}
+
+.add-tasks {
+  padding: 20px 38px;
+  width: 590px;
+  height: 59px;
+  background-color: #38404B;
+  -webkit-box-shadow: 1px 1px 2px rgba(66, 75, 88, 0.3), -1px -1px 2px rgba(46, 53, 62, 0.5), inset -3px 3px 6px rgba(46, 53, 62, 0.2), inset 3px -3px 6px rgba(46, 53, 62, 0.2), inset -3px -3px 6px rgba(66, 75, 88, 0.9), inset 3px 3px 8px rgba(46, 53, 62, 0.9);
+          box-shadow: 1px 1px 2px rgba(66, 75, 88, 0.3), -1px -1px 2px rgba(46, 53, 62, 0.5), inset -3px 3px 6px rgba(46, 53, 62, 0.2), inset 3px -3px 6px rgba(46, 53, 62, 0.2), inset -3px -3px 6px rgba(66, 75, 88, 0.9), inset 3px 3px 8px rgba(46, 53, 62, 0.9);
+  border-radius: 16px;
+  border-color: rgba(46, 53, 62, 0.2);
+  color: #94ADCF;
+}
+
+.add-tasks:focus {
+  outline: none;
+}
+
+.todo__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.todo__item {
+  position: relative;
+  margin-bottom: 50px;
+  padding: 21px 24px;
+  width: 449px;
+  height: 63px;
+  background: #38404B;
+  -webkit-box-shadow: -5px 5px 10px rgba(48, 54, 64, 0.2), 5px -5px 10px rgba(48, 54, 64, 0.2), -5px -5px 10px rgba(64, 74, 86, 0.9), 5px 5px 13px rgba(48, 54, 64, 0.9), inset 1px 1px 2px rgba(64, 74, 86, 0.3), inset -1px -1px 2px rgba(48, 54, 64, 0.5);
+          box-shadow: -5px 5px 10px rgba(48, 54, 64, 0.2), 5px -5px 10px rgba(48, 54, 64, 0.2), -5px -5px 10px rgba(64, 74, 86, 0.9), 5px 5px 13px rgba(48, 54, 64, 0.9), inset 1px 1px 2px rgba(64, 74, 86, 0.3), inset -1px -1px 2px rgba(48, 54, 64, 0.5);
+  border-radius: 16px;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+}
+
+.todo__item:hover {
+  -webkit-filter: brightness(90%);
+          filter: brightness(90%);
+}
+
+.todo__title {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  color: #94ADCF;
+}
+
+.todo-btn {
+  margin-right: 20px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2.5px solid #94ADCF;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+
+.todo-btn:hover {
+  -webkit-filter: brightness(110%);
+          filter: brightness(110%);
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.todo-btn__completed {
+  margin-right: 20px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2.5px solid #94ADCF;
+  background: #94ADCF;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+
+.todo-btn__completed:hover {
+  -webkit-filter: brightness(110%);
+          filter: brightness(110%);
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.title__completed {
+  margin-bottom: 52px;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 32px;
+  color: #94ADCF;
+}
+
+.todo__list__completed {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.todo__item__completed {
+  position: relative;
+  margin-bottom: 50px;
+  padding: 21px 24px;
+  width: 449px;
+  height: 63px;
+  background: #38404B;
+  -webkit-box-shadow: 1px 1px 2px rgba(64, 74, 86, 0.3), -1px -1px 2px rgba(48, 54, 64, 0.5), inset -5px 5px 10px rgba(48, 54, 64, 0.2), inset 5px -5px 10px rgba(48, 54, 64, 0.2), inset -5px -5px 10px rgba(64, 74, 86, 0.9), inset 5px 5px 13px rgba(48, 54, 64, 0.9);
+          box-shadow: 1px 1px 2px rgba(64, 74, 86, 0.3), -1px -1px 2px rgba(48, 54, 64, 0.5), inset -5px 5px 10px rgba(48, 54, 64, 0.2), inset 5px -5px 10px rgba(48, 54, 64, 0.2), inset -5px -5px 10px rgba(64, 74, 86, 0.9), inset 5px 5px 13px rgba(48, 54, 64, 0.9);
+  border-radius: 16px;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+}
+
+.todo__title__completed {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  -webkit-text-decoration-line: line-through;
+          text-decoration-line: line-through;
+  color: #94ADCF;
+}
+
+.todo__item__completed:hover {
+  -webkit-filter: brightness(90%);
+          filter: brightness(90%);
+}
+
+.todo__delete {
+  position: absolute;
+  bottom: 25%;
+  right: 20px;
+  padding: 5px;
+  background-color: #94ADCF;
+  border-radius: 7px;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+}
+
+.todo__delete:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.todo__item.anim {
+  -webkit-animation: opacity 0.8s ease-in-out;
+          animation: opacity 0.8s ease-in-out;
+}
+
+@-webkit-keyframes opacity {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes opacity {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+/*# sourceMappingURL=style.css.map */
