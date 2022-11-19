@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+.page {
+  height: 100%;
+  font-family: 'Ubuntu', sans-serif;
+  font-style: normal;
+}
+.page__body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100%;
+  font-size: 16px;
+  background-color: #38404B;
+}
+h1,h2,h3,h4,h5,h6,p {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+img {
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
+}
+.btn-reset {
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  clip: rect(0 0 0 0);
+}
+.container {
+  margin: 0 auto;
+  padding: 0 40px;
+  max-width: 1180px;
+
+  @media (max-width: 992px) {
+    padding: 0 20px;
+  }
+}
+
+.input-reset {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  border-radius: 0;
+  background-color: #fff;
+
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration {
+    display: none;
+  }
+}
+
+// main
+
+.main-title {
+  display: block;
+  margin-bottom: 50px;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 40px;
+  text-align: center;
+  color: #94ADCF;
+}
+
+.todo {
+  padding-top: 70px;
+  padding-bottom: 70px;
+
+  &__top {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+  }
+
+  &__input-box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+    text-align: center;
+  }
+
+  &__input {
+    padding: 0px 38px;
+    width: 590px;
+    height: 59px;
+    background-color: #38404B;
+    box-shadow: 1px 1px 2px rgba(66, 75, 88, 0.3), -1px -1px 2px rgba(46, 53, 62, 0.5), inset -3px 3px 6px rgba(46, 53, 62, 0.2), inset 3px -3px 6px rgba(46, 53, 62, 0.2), inset -3px -3px 6px rgba(66, 75, 88, 0.9), inset 3px 3px 8px rgba(46, 53, 62, 0.9);
+    border-radius: 16px;
+    border-color:rgba(46, 53, 62, 0.2);
+    color: #94ADCF;
+
+    &::placeholder {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 18px;
+      color: rgba(148, 173, 207, 0.5);
+      transition: opacity .3s;
+    }
+    
+    &:focus,
+    &:active {
+      &::placeholder {
+        opacity: 0;
+        transition: opacity .3s;
+      }
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+
+    &-edit {
+      border-radius: 16px;
+      padding: 0px 15px;
+      height: 100%;
+      background-color: #94ADCF;
+
+      &::placeholder {
+        color: #000;
+        transition: opacity .3s;
+      }
+
+      &:focus,
+      &:active {
+        &::placeholder {
+          opacity: 0;
+          transition: opacity .3s;
+        }
+      }
+
+      &:focus-visible {
+      outline: none;
+      }
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    padding: 7px;
+    top: 35%;
+    right: 4%;
+    width: 15px;
+    height: 15px;
+    border-top: 4px solid #94ADCF; 
+    border-left: 4px solid #94ADCF; 
+    transform: rotate(-225deg);
+    transition: all 0.1s ease-in-out;
+
+    &:hover {
+      filter: brightness(90%);
+    }
+  }
+}
+
+.todo__title {
+  margin-bottom: 52px;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 32px;
+  color: #94ADCF;
+}
+
+.todo-list__today {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.todo-today {
+  &__item {
+    position: relative;
+    display: flex;
+    border-radius: 16px;
+    padding: 21px 24px;
+    box-shadow: -5px 5px 10px rgba(48, 54, 64, 0.2), 5px -5px 10px rgba(48, 54, 64, 0.2), -5px -5px 10px rgba(64, 74, 86, 0.9), 5px 5px 13px rgba(48, 54, 64, 0.9), inset 1px 1px 2px rgba(64, 74, 86, 0.3), inset -1px -1px 2px rgba(48, 54, 64, 0.5);
+    line-height: 24px;
+    background-color: #38404B;
+    transition: all 0.1s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      filter: brightness(90%);
+    }
+  }
+
+  &__text {
+    display: inline-block;
+    max-width: 200px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #94ADCF;
+  }
+
+  &__box {
+    display: flex;
+    align-items: center;
+  }
+
+  &__btn {
+    margin-right: 20px;
+    width: 20px;
+    height: 20px;
+    transition: all 0.1s ease-in-out;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+
+      path {
+        fill: #94ADCF;
+      }
+    }
+
+    @media (max-width: 992px) {
+      margin-right: 10px;
+    }
+
+    &:hover {
+      filter: brightness(110%);
+      transform: scale(1.2);
+    }
+  }
+}
+
+.todo-list__complete {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.todo-complete {
+  &__item {
+    position: relative;
+    border-radius: 16px;
+    padding: 21px 24px;
+    box-shadow: 1px 1px 2px rgba(64, 74, 86, 0.3), -1px -1px 2px rgba(48, 54, 64, 0.5), inset -5px 5px 10px rgba(48, 54, 64, 0.2), inset 5px -5px 10px rgba(48, 54, 64, 0.2), inset -5px -5px 10px rgba(64, 74, 86, 0.9), inset 5px 5px 13px rgba(48, 54, 64, 0.9);
+    line-height: 24px;
+    background-color: #38404B;
+    transition: all 0.1s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      filter: brightness(90%);
+    }
+  }
+
+  &__box {
+    max-width: 220px;
+  }
+
+  &__text {
+    position: relative;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    /* text-decoration-line: line-through; */
+    color: #94ADCF;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: -3px;
+      top: 12px;
+      width: calc(100% + 5px);
+      height: 2px;
+      background-color: currentColor;
+    }
+  }
+
+  &__box {
+    display: flex;
+    align-items: center;
+  }
+
+  &__btn {
+    margin-right: 20px;
+    width: 24px;
+    height: 24px;
+    /* border-radius: 50%; */
+    /* border: 2.5px solid #94ADCF; */
+    /* background: #94ADCF; */
+    transition: all 0.1s ease-in-out;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+
+      path {
+        fill: #94ADCF;
+      }
+    }
+
+    @media (max-width: 992px) {
+      margin-right: 10px;
+    }
+
+    &:hover {
+      filter: brightness(110%);
+      transform: scale(1.2);
+    }
+  }
+}
+
+.todo__delete {
+  position: absolute;
+  bottom: 25%;
+  right: 20px;
+  padding: 5px;
+  background-color: #94ADCF;
+  border-radius: 7px;
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.todo__edit {
+  position: absolute;
+  bottom: 25%;
+  right: 90px;
+  padding: 5px;
+  background-color: #94ADCF;
+  border-radius: 7px;
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.todo__item.anim {
+  animation: opacity 0.8s ease-in-out
+}
+
+@keyframes opacity {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.hidden {
+  display: none;
+}

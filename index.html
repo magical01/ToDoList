@@ -13,45 +13,47 @@
   <script defer src="app.js"></script>
 </head>
 <body class="page__body">
-  <header class="header" id="header"></header>
+  <header class="header"></header>
   <main class="main" id="main">
-    <div class="container">
-      <h1 class="main__title">TO DO LIST</h1>
-      <div class="centered">
-        <div class="input__wrap">
-          <input type="text" class="add-tasks" name="add-tasks" id="add-tasks" placeholder="Add new task">
-          <button class="input-btn btn-reset" id="input-btn"></button>
+    <section class="todo">
+      <div class="container">
+        <h1 class="main-title">TO DO LIST</h1>
+        <div class="todo__top">
+          <div class="todo__input-box">
+            <input class="todo__input" type="text"  name="add-tasks" placeholder="Добавить новую задачу">
+            <button class="todo__btn btn-reset"></button>
+          </div>
         </div>
+        <h2 class="todo__title">
+          Задачи на сегодня :
+        </h2>
+        <ul class="todo-list__today list-reset todo-today">
+          <!-- <li class="todo__item">
+            <button class="todo-btn btn-reset"></button>
+            <span class="todo__title">Go Shopping</span>
+          </li>
+          <li class="todo__item">
+            <button class="todo-btn btn-reset"></button>
+            <span class="todo__title">Short exercise</span>
+          </li>
+          <li class="todo__item">
+            <button class="todo-btn btn-reset"></button>
+            <span class="todo__title">Meditation</span>
+          </li> -->
+        </ul>
+        <h2 class="todo__title">
+          Выполнены :
+        </h2>
+        <ul class="todo-list__complete list-reset todo-complete">
+          <!-- <li class="todo__item__completed">
+            <button class="todo-btn__completed btn-reset"></button>
+            <span class="todo__title__completed">Reading</span>
+            <span class="todo__delete"></span>
+          </li> -->
+        </ul>
       </div>
-      <h2 class="title__completed">
-        Task for today :
-      </h2>
-      <ul class="todo__list list-reset">
-        <!-- <li class="todo__item">
-          <button class="todo-btn btn-reset"></button>
-          <span class="todo__title">Go Shopping</span>
-        </li>
-        <li class="todo__item">
-          <button class="todo-btn btn-reset"></button>
-          <span class="todo__title">Short exercise</span>
-        </li>
-        <li class="todo__item">
-          <button class="todo-btn btn-reset"></button>
-          <span class="todo__title">Meditation</span>
-        </li> -->
-      </ul>
-      <h2 class="title__completed">
-        Completed:
-      </h2>
-      <ul class="todo__list__completed list-reset">
-        <!-- <li class="todo__item__completed">
-          <button class="todo-btn__completed btn-reset"></button>
-          <span class="todo__title__completed">Reading</span>
-          <span class="todo__delete"></span>
-        </li> -->
-      </ul>
-    </div>
+    </section>
   </main>
-  <footer class="footer" id="footer"></footer>
+  <footer class="footer"></footer>
 </body>
 </html>
