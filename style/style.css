@@ -73,6 +73,11 @@ img {
     padding: 0 20px;
   }
 }
+@media (max-width: 576px) {
+  .container {
+    padding: 0 15px;
+  }
+}
 
 .input-reset {
   -webkit-appearance: none;
@@ -95,6 +100,12 @@ img {
   text-align: center;
   color: #94ADCF;
 }
+@media (max-width: 476px) {
+  .main-title {
+    font-size: 42px;
+    line-height: 42px;
+  }
+}
 
 .todo {
   padding-top: 70px;
@@ -105,6 +116,11 @@ img {
   justify-content: center;
   margin-bottom: 100px;
 }
+@media (max-width: 576px) {
+  .todo__top {
+    margin-bottom: 50px;
+  }
+}
 .todo__input-box {
   position: relative;
   display: flex;
@@ -113,6 +129,11 @@ img {
   width: -moz-fit-content;
   width: fit-content;
   text-align: center;
+}
+@media (max-width: 768px) {
+  .todo__input-box {
+    width: 95%;
+  }
 }
 .todo__input {
   padding: 0px 38px;
@@ -123,6 +144,16 @@ img {
   border-radius: 16px;
   border-color: rgba(46, 53, 62, 0.2);
   color: #94ADCF;
+}
+@media (max-width: 768px) {
+  .todo__input {
+    width: 100%;
+  }
+}
+@media (max-width: 576px) {
+  .todo__input {
+    padding: 0 15px;
+  }
 }
 .todo__input::-moz-placeholder {
   font-weight: 400;
@@ -167,8 +198,19 @@ img {
 .todo__input-edit {
   border-radius: 16px;
   padding: 0px 15px;
+  width: 200px;
   height: 100%;
   background-color: #94ADCF;
+}
+@media (max-width: 1024px) {
+  .todo__input-edit {
+    width: 300px;
+  }
+}
+@media (max-width: 768px) {
+  .todo__input-edit {
+    width: 200px;
+  }
 }
 .todo__input-edit::-moz-placeholder {
   color: #000;
@@ -224,6 +266,12 @@ img {
   line-height: 32px;
   color: #94ADCF;
 }
+@media (max-width: 476px) {
+  .todo__title {
+    font-size: 26px;
+    line-height: 26px;
+  }
+}
 
 .todo-list__today {
   display: grid;
@@ -231,10 +279,16 @@ img {
   gap: 40px;
   margin-bottom: 50px;
 }
+@media (max-width: 1024px) {
+  .todo-list__today {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 
 .todo-today__item {
   position: relative;
   display: flex;
+  justify-content: space-between;
   border-radius: 16px;
   padding: 21px 24px;
   box-shadow: -5px 5px 10px rgba(48, 54, 64, 0.2), 5px -5px 10px rgba(48, 54, 64, 0.2), -5px -5px 10px rgba(64, 74, 86, 0.9), 5px 5px 13px rgba(48, 54, 64, 0.9), inset 1px 1px 2px rgba(64, 74, 86, 0.3), inset -1px -1px 2px rgba(48, 54, 64, 0.5);
@@ -243,18 +297,49 @@ img {
   transition: all 0.1s ease-in-out;
   cursor: pointer;
 }
+@media (max-width: 576px) {
+  .todo-today__item {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
 .todo-today__item:hover {
   filter: brightness(90%);
 }
 .todo-today__text {
-  display: inline-block;
+  position: relative;
+  display: -webkit-box;
+  overflow: hidden;
+  margin: 0;
   max-width: 200px;
   font-weight: 500;
   font-size: 18px;
-  line-height: 21px;
+  line-height: 20px;
   color: #94ADCF;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+@media (max-width: 1024px) {
+  .todo-today__text {
+    max-width: 300px;
+  }
+}
+@media (max-width: 768px) {
+  .todo-today__text {
+    max-width: 200px;
+  }
+}
+@media (max-width: 476px) {
+  .todo-today__text {
+    max-width: 160px;
+  }
 }
 .todo-today__box {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.todo-today__buttons {
   display: flex;
   align-items: center;
 }
@@ -287,9 +372,16 @@ img {
   grid-template-columns: repeat(2, 1fr);
   gap: 40px;
 }
+@media (max-width: 1024px) {
+  .todo-list__complete {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 
 .todo-complete__item {
   position: relative;
+  display: flex;
+  justify-content: space-between;
   border-radius: 16px;
   padding: 21px 24px;
   box-shadow: 1px 1px 2px rgba(64, 74, 86, 0.3), -1px -1px 2px rgba(48, 54, 64, 0.5), inset -5px 5px 10px rgba(48, 54, 64, 0.2), inset 5px -5px 10px rgba(48, 54, 64, 0.2), inset -5px -5px 10px rgba(64, 74, 86, 0.9), inset 5px 5px 13px rgba(48, 54, 64, 0.9);
@@ -298,28 +390,47 @@ img {
   transition: all 0.1s ease-in-out;
   cursor: pointer;
 }
+@media (max-width: 576px) {
+  .todo-complete__item {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
 .todo-complete__item:hover {
   filter: brightness(90%);
 }
-.todo-complete__box {
-  max-width: 220px;
+.todo-complete__buttons {
+  display: flex;
+  align-items: center;
 }
 .todo-complete__text {
   position: relative;
+  display: -webkit-box;
+  overflow: hidden;
+  margin: 0;
+  max-width: 200px;
   font-weight: 500;
   font-size: 18px;
-  line-height: 21px;
-  /* text-decoration-line: line-through; */
+  line-height: 20px;
   color: #94ADCF;
+  text-decoration: line-through;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
-.todo-complete__text::before {
-  content: "";
-  position: absolute;
-  left: -3px;
-  top: 12px;
-  width: calc(100% + 5px);
-  height: 2px;
-  background-color: currentColor;
+@media (max-width: 1024px) {
+  .todo-complete__text {
+    max-width: 300px;
+  }
+}
+@media (max-width: 768px) {
+  .todo-complete__text {
+    max-width: 200px;
+  }
+}
+@media (max-width: 476px) {
+  .todo-complete__text {
+    max-width: 160px;
+  }
 }
 .todo-complete__box {
   display: flex;
@@ -329,9 +440,6 @@ img {
   margin-right: 20px;
   width: 24px;
   height: 24px;
-  /* border-radius: 50%; */
-  /* border: 2.5px solid #94ADCF; */
-  /* background: #94ADCF; */
   transition: all 0.1s ease-in-out;
 }
 .todo-complete__btn svg {
@@ -353,12 +461,12 @@ img {
 }
 
 .todo__delete {
-  position: absolute;
-  bottom: 25%;
-  right: 20px;
-  padding: 5px;
-  background-color: #94ADCF;
-  border-radius: 7px;
+  width: 24px;
+  height: 24px;
+  background-image: url("../img/svg/delete.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   transition: all 0.1s ease-in-out;
   cursor: pointer;
 }
@@ -367,12 +475,13 @@ img {
 }
 
 .todo__edit {
-  position: absolute;
-  bottom: 25%;
-  right: 90px;
-  padding: 5px;
-  background-color: #94ADCF;
-  border-radius: 7px;
+  margin-right: 10px;
+  width: 22px;
+  height: 22px;
+  background-image: url("../img/svg/edit.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   transition: all 0.1s ease-in-out;
   cursor: pointer;
 }
@@ -383,6 +492,12 @@ img {
 .todo__item.anim {
   -webkit-animation: opacity 0.8s ease-in-out;
           animation: opacity 0.8s ease-in-out;
+}
+
+@media (max-width: 476px) {
+  .todo-text {
+    font-size: 16px;
+  }
 }
 
 @-webkit-keyframes opacity {

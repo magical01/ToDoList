@@ -39,7 +39,6 @@ function deleteCompletedTodo(id) {
 }
 
 function renderHTML() {
-  // console.log(todos);
   let html = '';
   let htmlCompleted = ''
 
@@ -56,10 +55,12 @@ function renderHTML() {
               <path d="M13.41 12l4.3-4.29a1 1 0 1 0-1.42-1.42L12 10.59l-4.29-4.3a1 1 0 0 0-1.42 1.42l4.3 4.29-4.3 4.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l4.29-4.3 4.29 4.3a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42z"/></g></g></svg>
             </button>
             <span class="todo-complete__text todo-text">${todo.text}</span>
-            <input class="todo__input-edit hidden input-reset" type="text"  name="edit" placeholder="Изменить текущую задачу">
+            <input class="todo__input-edit hidden input-reset" type="text"  name="edit" placeholder="Изменить задачу">
           </div>
-          <button class="todo__edit btn-reset" data-edit="edit" data-num="${index}">${'изменить'}</button>
-          <button class="todo-complete__delete todo__delete btn-reset" data-num="${index}" data-delete="del">${'удалить'}</button>
+          <div class="todo-complete__buttons">
+            <button class="todo__edit btn-reset" data-edit="edit" data-num="${index}"></button>
+            <button class="todo-complete__delete todo__delete btn-reset" data-num="${index}" data-delete="del"></button>
+          </div
       </li>
       `
       return;
@@ -77,11 +78,13 @@ function renderHTML() {
             l21.079-25.061C40.331,9.294,40.271,8.583,39.04,7.604z"/>
           </svg>
         </button>
-        <span class="todo-today__text todo-text">${todo.text}</span>
-        <input class="todo__input-edit hidden input-reset" type="text"  name="edit" placeholder="Изменить текущую задачу">
+        <div class="todo-today__text todo-text">${todo.text}</div>
+        <input class="todo__input-edit hidden input-reset" type="text"  name="edit" placeholder="Изменить задачу">
       </div>
-      <button class="todo__edit btn-reset" data-edit="edit" data-num="${index}">${'изменить'}</button>
-      <button class="todo-today__delete todo__delete btn-reset" data-num="${index}" data-delete="del">${'удалить'}</button>
+      <div class="todo-today__buttons">
+        <button class="todo__edit btn-reset" data-edit="edit" data-num="${index}"></button>
+        <button class="todo-today__delete todo__delete btn-reset" data-num="${index}" data-delete="del"></button>
+      </div>
     </li>
     `
   })
@@ -154,11 +157,15 @@ function editTasks(self) {
   self.previousElementSibling.querySelector('.todo__input-edit').classList.toggle('hidden');
   self.previousElementSibling.querySelector('.todo__input-edit').addEventListener('input', (e) => {
     self.previousElementSibling.querySelector('.todo-text').textContent = e.target.value;
-  });
-  // self.previousElementSibling.classList.add('visually-hidden');
-  // self.previousElementSibling.insertAdjacentHTML('afterend', `<input class="todo__input-edit" type="text"  name="edit" placeholder="Изменить текущую задачу">`)
-}
 
-// console.log(todos)
+    todos.forEach((todo, index) => {
+      if (self.parentElement.dataset.num ==  index) {
+        todo.text = e.target.value;
+      }
+    });
+
+    updateLocal()
+  });
+}
 
 document.addEventListener('DOMContentLoaded', renderHTML);
