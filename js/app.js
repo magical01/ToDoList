@@ -153,13 +153,13 @@ function deleteTasks(index) {
 }
 
 function editTasks(self) {
-  self.previousElementSibling.querySelector('.todo-text').classList.toggle('hidden');
-  self.previousElementSibling.querySelector('.todo__input-edit').classList.toggle('hidden');
-  self.previousElementSibling.querySelector('.todo__input-edit').addEventListener('input', (e) => {
-    self.previousElementSibling.querySelector('.todo-text').textContent = e.target.value;
+  self.parentElement.parentElement.querySelector('.todo-text').classList.toggle('hidden');
+  self.parentElement.parentElement.querySelector('.todo__input-edit').classList.toggle('hidden');
+  self.parentElement.parentElement.querySelector('.todo__input-edit').addEventListener('input', (e) => {
+    self.parentElement.parentElement.querySelector('.todo-text').textContent = e.target.value;
 
     todos.forEach((todo, index) => {
-      if (self.parentElement.dataset.num ==  index) {
+      if (self.parentElement.parentElement.dataset.num ==  index) {
         todo.text = e.target.value;
       }
     });
